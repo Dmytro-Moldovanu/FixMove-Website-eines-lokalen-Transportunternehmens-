@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Daniel Transporte - Zuverlässige Transporte in ganz Deutschland</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        :root {
+            --container-padding: 15px;
+            --section-spacing: 60px;
+            --card-spacing: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --container-padding: 10px;
+                --section-spacing: 40px;
+                --card-spacing: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            :root {
+                --container-padding: 8px;
+                --section-spacing: 30px;
+                --card-spacing: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Daniely Transporte</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Dienstleistungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#moebeltaxi">Möbeltaxi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Über uns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="scrollToTop" class="btn btn-primary ms-3" title="Nach oben">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Ihr zuverlässiger Partner für Transporte von Augsburg in ganz Europa</h1>
+                    <p class="lead">Professionelle Transportlösungen für Motorräder, Möbel und mehr. Schnell, sicher und zuverlässig.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg">Kontaktieren Sie uns</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Unsere Dienstleistungen</h2>
+            <div class="row justify-content-around">
+                <!-- Левый коллаж (мотоциклы) -->
+                <div class="col-md-5">
+                    <h4 class="collage-title text-center mb-2">Motorradtransporte</h4>
+                    <div class="fan-photo-container">
+                        <div class="fan-photo" id="moto-fan">
+                            <div class="fan-photo-item" style="z-index: 4;">
+                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 5.jpg') }}" alt="Motorradtransport">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 3;">
+                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 4.jpg') }}" alt="Motorradtransport">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 2;">
+                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 3.jpg') }}" alt="Motorradtransport">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 1;">
+                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 1.jpg') }}" alt="Motorradtransport">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правый коллаж (оборудование) -->
+                <div class="col-md-5">
+                    <h4 class="collage-title text-center mb-2">Professionelle Befestigung</h4>
+                    <div class="fan-photo-container">
+                        <div class="fan-photo" id="equip-fan">
+                            <div class="fan-photo-item" style="z-index: 4;">
+                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/крепление переднее картинка.jpg') }}" alt="Motorradausrüstung">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 3;">
+                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/рампа.jpg') }}" alt="Motorradausrüstung">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 2;">
+                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/крепление зааднее.jpg') }}" alt="Motorradausrüstung">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 1;">
+                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/крепление переднее фото.jpg') }}" alt="Motorradausrüstung">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 text-center">
+                    <div class="service-content">
+                        <p class="lead mb-0" style="font-size: 1.3rem; color: var(--primary-blue);">
+                            Professioneller Motorradtransport aus Augsburg in ganz Europa mit zuverlässigen Befestigungen 
+                            für Vorder- und Hinterrad, Laderampe für einfaches Be- und Entladen sowie sichere Verzurrung!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Новая секция для Möbeltaxi и Umzüge -->
+    <section id="moebeltaxi" class="py-5 moebel-section section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5" style="margin-top: -50px;">Möbeltaxi und Umzüge</h2>
+            <div class="row justify-content-around">
+                <!-- Левый коллаж (мебель) -->
+                <div class="col-md-5">
+                    <h4 class="collage-title text-center mb-2">Möbeltransporte</h4>
+                    <div class="fan-photo-container">
+                        <div class="fan-photo" id="moebel-fan">
+                            <div class="fan-photo-item" style="z-index: 2;">
+                                <img src="{{ url_for('static', filename='images/Umzug/транспортировка мебели 2.jpg') }}" alt="Möbeltransport">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 1;">
+                                <img src="{{ url_for('static', filename='images/Umzug/транспортировка мебели 3.jpeg') }}" alt="Möbeltransport">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правый коллаж (ящики/грузы) -->
+                <div class="col-md-5">
+                    <h4 class="collage-title text-center mb-2">Zuverlässige Umzüge</h4>
+                    <div class="fan-photo-container">
+                        <div class="fan-photo" id="umzug-fan">
+                            <div class="fan-photo-item" style="z-index: 2;">
+                                <img src="{{ url_for('static', filename='images/Umzug/ящики, надёжно.jpg') }}" alt="Umzugsverpackung">
+                            </div>
+                            <div class="fan-photo-item" style="z-index: 1;">
+                                <img src="{{ url_for('static', filename='images/Umzug/транспортировка большого груза.jpg') }}" alt="Großtransport">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 text-center">
+                    <div class="service-content">
+                        <p class="lead mb-0" style="font-size: 1.3rem; color: var(--primary-blue);">
+                            Kompletter Umzugsservice aus einer Hand: Vom Verpacken bis zum Transport. 
+                            Zuverlässige Möbeltransporte in Augsburg und europaweit mit sorgfältiger Ladungssicherung!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-light position-relative">
+        <div class="container">
+            <h2 class="text-center mb-5">Über uns</h2>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="truck-images-container">
+                        <div class="feature-item" style="margin-right: 30px; width: 30%;">
+                            <h4>Unsere Vorteile</h4>
+                            <ul>
+                                <li>Erfahrener Fahrer mit langjähriger Erfahrung</li>
+                                <li>Professionelle Ladungssicherung</li>
+                                <li>24/7 Verfügbarkeit</li>
+                                <li>Transport bis 3,5 Tonnen</li>
+                                <li>Europaweite Transportleistungen</li>
+                                <li>Hochwertig ausgestatteter, sauberer Laderaum</li>
+                            </ul>
+                        </div>
+                        <div class="truck-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/чистота машины и вспомогательные девайсы.png') }}" alt="Sauberkeit und Ausrüstung" class="truck-image">
+                        </div>
+                        <div class="truck-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/машина1.jpg') }}" alt="Unser Fahrzeug" class="truck-image">
+                        </div>
+                        <div class="feature-item" style="margin-left: 30px; width: 30%;">
+                            <h4>Flexibler Einsatz</h4>
+                            <ul>
+                                <li>Miete des Fahrers mit Fahrzeug (nur als Paket)</li>
+                                <li>Zusätzlich: Hilfe beim Be- und Entladen durch den Fahrer</li>
+                                <li>Individuelle Lösungen für jede Transportart</li>
+                                <li>Professionelle Befestigung von Motorrädern</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="about-content">
+                        <p class="lead mb-4">
+                            Seit über 5 Jahren bieten wir<br>
+                            zuverlässige Transportdienstleistungen in Augsburg und weit darüber hinaus an.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Kontaktieren Sie uns</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form action="/submit" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Ihr Name" required name="name">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="tel" class="form-control" placeholder="Telefon" required name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Was möchten Sie transportieren?" required name="description"></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Abholadresse (inkl. Etage)" required name="pickup_address">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Lieferadresse (inkl. Etage)" required name="delivery_address">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="date" class="form-control" required name="pickup_date">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <select class="form-control" required name="pickup_time">
+                                    <option value="">Uhrzeit wählen</option>
+                                    <option value="00:00">00:00</option>
+                                    <option value="00:15">00:15</option>
+                                    <option value="00:30">00:30</option>
+                                    <option value="00:45">00:45</option>
+                                    <option value="01:00">01:00</option>
+                                    <option value="01:15">01:15</option>
+                                    <option value="01:30">01:30</option>
+                                    <option value="01:45">01:45</option>
+                                    <option value="02:00">02:00</option>
+                                    <option value="02:15">02:15</option>
+                                    <option value="02:30">02:30</option>
+                                    <option value="02:45">02:45</option>
+                                    <option value="03:00">03:00</option>
+                                    <option value="03:15">03:15</option>
+                                    <option value="03:30">03:30</option>
+                                    <option value="03:45">03:45</option>
+                                    <option value="04:00">04:00</option>
+                                    <option value="04:15">04:15</option>
+                                    <option value="04:30">04:30</option>
+                                    <option value="04:45">04:45</option>
+                                    <option value="05:00">05:00</option>
+                                    <option value="05:15">05:15</option>
+                                    <option value="05:30">05:30</option>
+                                    <option value="05:45">05:45</option>
+                                    <option value="06:00">06:00</option>
+                                    <option value="06:15">06:15</option>
+                                    <option value="06:30">06:30</option>
+                                    <option value="06:45">06:45</option>
+                                    <option value="07:00">07:00</option>
+                                    <option value="07:15">07:15</option>
+                                    <option value="07:30">07:30</option>
+                                    <option value="07:45">07:45</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="08:15">08:15</option>
+                                    <option value="08:30">08:30</option>
+                                    <option value="08:45">08:45</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="09:15">09:15</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="09:45">09:45</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:15">10:15</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="10:45">10:45</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:15">11:15</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="11:45">11:45</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:15">12:15</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="12:45">12:45</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:15">13:15</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="13:45">13:45</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:15">14:15</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="14:45">14:45</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:15">15:15</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="15:45">15:45</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:15">16:15</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="16:45">16:45</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:15">17:15</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="17:45">17:45</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:15">18:15</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="18:45">18:45</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:15">19:15</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="19:45">19:45</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:15">20:15</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="20:45">20:45</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:15">21:15</option>
+                                    <option value="21:30">21:30</option>
+                                    <option value="21:45">21:45</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="22:15">22:15</option>
+                                    <option value="22:30">22:30</option>
+                                    <option value="22:45">22:45</option>
+                                    <option value="23:00">23:00</option>
+                                    <option value="23:15">23:15</option>
+                                    <option value="23:30">23:30</option>
+                                    <option value="23:45">23:45</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="loader" name="loader">
+                                <label class="form-check-label" for="loader">
+                                    Hilfe beim Be- und Entladen
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Zusätzliche Informationen oder Anmerkungen" name="notes"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="photoUpload" class="form-label">Fotos anhängen (optional)</label>
+                            <input type="file" class="form-control" id="photoUpload" name="photos" multiple accept="image/*" onchange="previewImages(this)">
+                            <div class="form-text">Sie können mehrere Fotos auswählen</div>
+                        </div>
+
+                        <div id="imagePreview" class="mb-3 row g-2">
+                            <!-- Здесь будут отображаться превью фотографий -->
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Anfrage senden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Kontakt</h5>
+                    <p>Telefon/WhatsApp: <a href="tel:+491629394390" class="text-white">+49 162 9394390</a></p>
+                    <p>Email: <a href="mailto:DanielyTransporte@yahoo.com" class="text-white">DanielyTransporte@yahoo.com</a></p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2024 Daniely Transporte. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
