@@ -3,7 +3,6 @@
 """
 from flask import Blueprint, request, current_app, redirect, url_for, flash, render_template, jsonify
 from app.models.form_data import ContactFormData
-from app.utils.file_handlers import save_uploaded_files
 from app.services.form_service import FormService
 
 # Создаем Blueprint для обработки форм
@@ -30,10 +29,6 @@ def submit():
         loader = bool(request.form.get('loader'))
         notes = request.form.get('notes')
         
-        # Обрабатываем загруженные файлы
-        photos = request.files.getlist('photos')
-        uploaded_files = save_uploaded_files(photos, current_app.config['UPLOAD_FOLDER'])
-        
         # Создаем объект данных формы
         form_data = ContactFormData(
             name=name,
@@ -45,8 +40,7 @@ def submit():
             pickup_date=pickup_date,
             pickup_time=pickup_time,
             loader=loader,
-            notes=notes,
-            photo_paths=uploaded_files
+            notes=notes
         )
         
         # Логируем данные для отладки

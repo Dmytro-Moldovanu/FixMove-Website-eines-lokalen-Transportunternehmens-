@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Scroll to top button functionality
     const scrollToTopButton = document.getElementById('scrollToTop');
+    
+    // Hide button on page load
+    scrollToTopButton.style.display = 'none';
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -79,55 +82,4 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
-});
-
-function previewImages(input) {
-    const preview = document.getElementById('imagePreview');
-    
-    if (input.files) {
-        Array.from(input.files).forEach((file, index) => {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const col = document.createElement('div');
-                col.className = 'col-md-3';
-                
-                const card = document.createElement('div');
-                card.className = 'card h-100';
-                
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.className = 'card-img-top';
-                img.style.height = '150px';
-                img.style.objectFit = 'cover';
-                
-                const cardBody = document.createElement('div');
-                cardBody.className = 'card-body p-2';
-                
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'btn btn-danger btn-sm w-100';
-                deleteBtn.innerHTML = 'Löschen';
-                deleteBtn.onclick = function() {
-                    // Создаем новый FileList без удаленного файла
-                    const dt = new DataTransfer();
-                    const files = input.files;
-                    
-                    for (let i = 0; i < files.length; i++) {
-                        if (i !== index) {
-                            dt.items.add(files[i]);
-                        }
-                    }
-                    
-                    input.files = dt.files;
-                    col.remove(); // Удаляем превью
-                };
-                
-                cardBody.appendChild(deleteBtn);
-                card.appendChild(img);
-                card.appendChild(cardBody);
-                col.appendChild(card);
-                preview.appendChild(col);
-            };
-            reader.readAsDataURL(file);
-        });
-    }
-} 
+}); 

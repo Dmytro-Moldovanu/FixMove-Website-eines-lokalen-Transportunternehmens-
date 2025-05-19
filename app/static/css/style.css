@@ -926,33 +926,7 @@ textarea.form-control {
     }
 }
 
-/* Стили для новой секции Möbeltaxi und Umzüge */
-.moebel-section {
-    background-color: var(--light-blue);
-    position: relative;
-    z-index: 1;
-    padding-top: 60px;
-    padding-bottom: 200px;
-    border: none;
-    border-bottom: 5px solid var(--light-blue);
-}
-
-.moebel-section::before,
-.moebel-section::after {
-    display: none;
-    content: none;
-}
-
-.moebel-section h2 {
-    margin-top: 20px;
-    color: var(--primary-blue);
-    font-weight: 600;
-    margin-bottom: 50px;
-}
-
-#moebeltaxi {
-    scroll-margin-top: 90px;
-}
+/* Стили для секции Möbeltaxi und Umzüge */#moebeltaxi {    scroll-margin-top: 90px;}
 
 /* Стили для идентификаторов новых коллажей с двумя фото */
 #moebel-fan .fan-photo-item:nth-child(1),
