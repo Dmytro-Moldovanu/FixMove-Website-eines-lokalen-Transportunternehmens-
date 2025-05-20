@@ -22,7 +22,7 @@ body {
     padding: clamp(40px, 10vh, 100px) 0;
     text-align: left;
     overflow: hidden;
-    background-image: url('../images/фон.jpg');
+    background-image: url('../images/Hintergrund.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -505,7 +505,7 @@ textarea.form-control {
         margin-bottom: -200px;
     }
     
-    /* Добавляем отступ между фотографиями - ровно 20px */
+    /* Fügen wir einen Abstand zwischen den Fotos hinzu - genau 20px */
     .truck-image-wrapper:nth-child(3) {
         margin-top: -180px; 
         margin-bottom: -200px;
@@ -526,15 +526,9 @@ textarea.form-control {
         object-position: center;
     }
     
-    .feature-item {
-        width: 95% !important;
-        margin: 0 auto 0 auto !important;
-        padding: 25px;
-    }
-    
-    /* Стиль для блока "Flexibler Einsatz" - четвертый элемент в контейнере */
+    /* Stil für den Block "Flexibler Einsatz" - viertes Element im Container */
     .truck-images-container > .feature-item:nth-child(4) {
-        margin-top: 18px !important; /* Точное значение 18px */
+        margin-top: 18px !important; /* Genauer Wert 18px */
     }
 }
 
@@ -682,7 +676,7 @@ textarea.form-control {
     height: 20px;
 }
 
-/* Адаптивные отступы и размеры */
+/* Responsive Abstände und Größen */
 .container {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
@@ -744,7 +738,7 @@ textarea.form-control {
     position: absolute;
     bottom: 0;
     left: 50%;
-    margin-left: -90px; /* половина ширины для центрирования */
+    margin-left: -90px; /* Hälfte der Breite für die Zentrierung */
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -766,7 +760,7 @@ textarea.form-control {
     -webkit-backface-visibility: hidden;
 }
 
-/* Начальное состояние - фото сложены в стопку с небольшим смещением */
+/* Anfangszustand - Fotos sind mit leichtem Versatz gestapelt */
 #moto-fan .fan-photo-item:nth-child(1) {
     transform: translate3d(-45px, -15px, 0) !important;
     z-index: 4;
@@ -807,7 +801,7 @@ textarea.form-control {
     z-index: 1;
 }
 
-/* Анимация при наведении - фото разворачиваются в ряд */
+/* Animation beim Hover - Fotos entfalten sich in einer Reihe */
 #moto-fan:hover .fan-photo-item:nth-child(1) {
     transform: translate3d(-270px, 0, 0) !important;
     z-index: 1;
@@ -848,14 +842,14 @@ textarea.form-control {
     z-index: 4;
 }
 
-/* Эффект увеличения при наведении на отдельную фотографию */
+/* Vergrößerungseffekt beim Hover über ein einzelnes Foto */
 .fan-photo-item:hover {
     z-index: 10 !important;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
     transform: translate3d(0, -30px, 0) scale(1.2) !important;
 }
 
-/* Адаптивные стили */
+/* Responsive Stile */
 @media (max-width: 992px) {
     .fan-photo-container {
         height: 300px;
@@ -867,7 +861,7 @@ textarea.form-control {
         margin-left: -75px;
     }
     
-    /* Адаптация положения фото для меньших экранов */
+    /* Anpassung der Fotoposition für kleinere Bildschirme */
     #moto-fan:hover .fan-photo-item:nth-child(1),
     #equip-fan:hover .fan-photo-item:nth-child(1) {
         transform: translate3d(-225px, 0, 0) !important;
@@ -900,7 +894,7 @@ textarea.form-control {
         margin-left: -60px;
     }
     
-    /* Адаптация положения фото для мобильных экранов */
+    /* Anpassung der Fotoposition für mobile Bildschirme */
     #moto-fan:hover .fan-photo-item:nth-child(1),
     #equip-fan:hover .fan-photo-item:nth-child(1) {
         transform: translate3d(-180px, 0, 0) !important;
@@ -926,9 +920,9 @@ textarea.form-control {
     }
 }
 
-/* Стили для секции Möbeltaxi und Umzüge */#moebeltaxi {    scroll-margin-top: 90px;}
+/* Stile für die Sektion Möbeltaxi und Umzüge */#moebeltaxi {    scroll-margin-top: 90px;}
 
-/* Стили для идентификаторов новых коллажей с двумя фото */
+/* Stile für die IDs der neuen Collagen mit zwei Fotos */
 #moebel-fan .fan-photo-item:nth-child(1),
 #umzug-fan .fan-photo-item:nth-child(1) {
     transform: translate3d(-20px, -10px, 0) !important;
@@ -941,7 +935,7 @@ textarea.form-control {
     z-index: 1;
 }
 
-/* Анимация при наведении для новых коллажей с двумя фото */
+/* Animation beim Hover für neue Collagen mit zwei Fotos */
 #moebel-fan:hover .fan-photo-item:nth-child(1),
 #umzug-fan:hover .fan-photo-item:nth-child(1) {
     transform: translate3d(-120px, 0, 0) !important;

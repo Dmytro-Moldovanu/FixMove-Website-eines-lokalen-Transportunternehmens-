@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            // Инициализация EmailJS с вашим публичным ключом
+            // Initialisierung von EmailJS mit Ihrem öffentlichen Schlüssel
             emailjs.init("HDkfTM23gfmDWw3oG");
         })();
     </script>
@@ -37,7 +37,7 @@
             }
         }
         
-        /* Общий фон для body, чтобы закрыть возможные промежутки */
+        /* Allgemeiner Hintergrund für body, um mögliche Lücken zu schließen */
         body {
             background-color: var(--light-blue);
         }
@@ -48,7 +48,7 @@
             padding-bottom: var(--section-spacing) !important;
         }
         
-        /* Устраняем промежутки между секциями */
+        /* Beseitigen wir die Abstände zwischen den Abschnitten */
         #services, #moebeltaxi, #about {
             margin-top: 0;
             margin-bottom: 0;
@@ -96,7 +96,7 @@
             margin-top: -10px;
         }
         
-        /* Стиль для кнопки прокрутки вверх */
+        /* Stil für die Scroll-nach-oben-Schaltfläche */
         .scroll-top-button {
             position: fixed;
             right: 20px;
@@ -112,14 +112,14 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
-        /* Немного увеличиваем контрастность для карточек */
+        /* Erhöhen wir leicht den Kontrast für die Karten */
         .fan-photo-item img {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
-        /* Стили для секции контактов с фоновым изображением */
+        /* Stile für den Kontaktbereich mit Hintergrundbild */
         #contact {
-            background-image: url("{{ url_for('static', filename='images/maps.jpg') }}");
+            background-image: url("{{ url_for('static', filename='images/Karte.jpg') }}");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -127,7 +127,7 @@
         }
         
         .contact-overlay {
-            background-color: rgba(0, 0, 0, 0.4); /* Чуть темнее оверлей для карты */
+            background-color: rgba(0, 0, 0, 0.4); /* Etwas dunkleres Overlay für die Karte */
         }
         
         #contact .container {
@@ -331,9 +331,7 @@
             background-color: #1f9d4d;
         }
 
-        /* Синий цвет для текста на полупрозрачном фоне */
-        #services .service-content p, 
-        #moebeltaxi .service-content p {
+                /* Blauer Text auf halbtransparentem Hintergrund */        #services .service-content p,         #moebeltaxi .service-content p {
             color: var(--primary-blue) !important;
             font-weight: 500;
             background-color: rgba(255, 255, 255, 0.5);
@@ -341,20 +339,20 @@
             border-radius: 5px;
         }
 
-        /* Стили для секции moebeltaxi */
+        /* Stile für die Sektion moebeltaxi */
         #moebeltaxi {
             position: relative;
         }
         
         #moebeltaxi .container {
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.5); /* Увеличена прозрачность с 0.4 до 0.5 */
+            background-color: rgba(255, 255, 255, 0.5); /* Transparenz von 0.4 auf 0.5 erhöht */
             border-radius: 10px;
             padding: 30px;
             box-shadow: none;
         }
 
-        /* Стили для секции с фоновым изображением */
+        /* Stile für die Sektion mit Hintergrundbild */
         #services, #moebeltaxi {
             background-color: var(--light-blue);
             position: relative;
@@ -392,7 +390,7 @@
             text-align: center;
         }
         
-        /* Восстанавливаем оригинальные стили для hero-section */
+        /* Wiederherstellen der ursprünglichen Stile für hero-section */
         .hero-section h1,
         .hero-section p.lead {
             color: white;
@@ -402,8 +400,7 @@
             text-align: left;
         }
         
-        /* Синий цвет для текста на полупрозрачном фоне */
-        #services .service-content p {
+                /* Blauer Text auf halbtransparentem Hintergrund */        #services .service-content p {
             color: var(--primary-blue) !important;
             font-weight: 500;
             background-color: rgba(255, 255, 255, 0.5);
@@ -411,7 +408,7 @@
             border-radius: 5px;
         }
 
-        /* Стили для moebel-section */
+        /* Stile für moebel-section */
         .moebel-section {
             background-color: var(--light-blue);
             position: relative;
@@ -448,7 +445,7 @@
         </div>
     </nav>
     
-    <!-- Кнопка прокрутки вверх -->
+        <!-- Scroll-nach-oben-Schaltfläche -->
     <button id="scrollToTop" class="btn btn-primary scroll-top-button" title="Nach oben">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
@@ -472,43 +469,43 @@
         <div class="container position-relative" style="background-color: rgba(255, 255, 255, 0.4);">
             <h2 class="text-center mb-5" style="color: var(--primary-blue); text-shadow: 2px 2px 3px rgba(0,0,0,0.2);">Unsere Dienstleistungen</h2>
             <div class="row justify-content-around">
-                <!-- Левый коллаж (мотоциклы) -->
+                <!-- Linke Collage (Motorräder) -->
                 <div class="col-md-5">
                     <h4 class="collage-title text-center mb-2" style="color: var(--primary-blue); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Motorradtransporte</h4>
                     <div class="fan-photo-container">
                         <div class="fan-photo" id="moto-fan">
                             <div class="fan-photo-item" style="z-index: 4;">
-                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 5.jpg') }}" alt="Motorradtransport">
+                                <img src="{{ url_for('static', filename='images/Motorradtransport5.jpg') }}" alt="Motorradtransport">
                             </div>
                             <div class="fan-photo-item" style="z-index: 3;">
-                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 4.jpg') }}" alt="Motorradtransport">
+                                <img src="{{ url_for('static', filename='images/Motorradtransport4.jpg') }}" alt="Motorradtransport">
                             </div>
                             <div class="fan-photo-item" style="z-index: 2;">
-                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 3.jpg') }}" alt="Motorradtransport">
+                                <img src="{{ url_for('static', filename='images/Motorradtransport3.jpg') }}" alt="Motorradtransport">
                             </div>
                             <div class="fan-photo-item" style="z-index: 1;">
-                                <img src="{{ url_for('static', filename='images/транспортировка мотоцикла 1.jpg') }}" alt="Motorradtransport">
+                                <img src="{{ url_for('static', filename='images/Motorradtransport1.jpg') }}" alt="Motorradtransport">
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Правый коллаж (оборудование) -->
+                <!-- Rechte Collage (Ausrüstung) -->
                 <div class="col-md-5">
                     <h4 class="collage-title text-center mb-2" style="color: var(--primary-blue); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Professionelle Befestigung</h4>
                     <div class="fan-photo-container">
                         <div class="fan-photo" id="equip-fan">
                             <div class="fan-photo-item" style="z-index: 4;">
-                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/крепление переднее картинка.jpg') }}" alt="Motorradausrüstung">
+                                <img src="{{ url_for('static', filename='images/Motorradausruestung/Hintere_Befestigung.jpg') }}" alt="Motorradausrüstung">
                             </div>
                             <div class="fan-photo-item" style="z-index: 3;">
-                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/рампа.jpg') }}" alt="Motorradausrüstung">
+                                <img src="{{ url_for('static', filename='images/Motorradausruestung/Rampe.jpg') }}" alt="Motorradausrüstung">
                             </div>
                             <div class="fan-photo-item" style="z-index: 2;">
-                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/крепление зааднее.jpg') }}" alt="Motorradausrüstung">
+                                <img src="{{ url_for('static', filename='images/Motorradausruestung/Vordere_Befestigung_Bild.jpg') }}" alt="Motorradausrüstung">
                             </div>
                             <div class="fan-photo-item" style="z-index: 1;">
-                                <img src="{{ url_for('static', filename='images/оборудование мотоциклы/крепление переднее фото.jpg') }}" alt="Motorradausrüstung">
+                                <img src="{{ url_for('static', filename='images/Motorradausruestung/Vordere_Befestigung_Foto.jpg') }}" alt="Motorradausrüstung">
                             </div>
                         </div>
                     </div>
@@ -528,40 +525,36 @@
         </div>
     </section>
 
-    <style>
-        /* Дополнительные стили для секций */
-    </style>
-
     <section id="moebeltaxi" class="py-5 moebel-section section-padding" style="margin-top: -5px; margin-bottom: -5px;">
         <div class="bg-image-overlay"></div>
         <div class="container position-relative" style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 30px;">
             <h2 class="text-center mb-5" style="color: var(--primary-blue); text-shadow: 2px 2px 3px rgba(0,0,0,0.2);">Möbeltaxi und Umzüge</h2>
             <div class="row justify-content-around">
-                <!-- Левый коллаж (мебель) -->
+                <!-- Linke Collage (Möbel) -->
                 <div class="col-md-5">
                     <h4 class="collage-title text-center mb-2" style="color: var(--primary-blue); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Möbeltransporte</h4>
                     <div class="fan-photo-container">
                         <div class="fan-photo" id="moebel-fan">
                             <div class="fan-photo-item" style="z-index: 2;">
-                                <img src="{{ url_for('static', filename='images/Umzug/транспортировка мебели 2.jpg') }}" alt="Möbeltransport">
+                                <img src="{{ url_for('static', filename='images/Umzug/Moebeltransport2.jpg') }}" alt="Möbeltransport">
                             </div>
                             <div class="fan-photo-item" style="z-index: 1;">
-                                <img src="{{ url_for('static', filename='images/Umzug/транспортировка мебели 3.jpeg') }}" alt="Möbeltransport">
+                                <img src="{{ url_for('static', filename='images/Umzug/Moebeltransport3.jpeg') }}" alt="Möbeltransport">
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Правый коллаж (ящики/грузы) -->
+                <!-- Rechte Collage (Kisten/Fracht) -->
                 <div class="col-md-5">
                     <h4 class="collage-title text-center mb-2" style="color: var(--primary-blue); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Zuverlässige Umzüge</h4>
                     <div class="fan-photo-container">
                         <div class="fan-photo" id="umzug-fan">
                             <div class="fan-photo-item" style="z-index: 2;">
-                                <img src="{{ url_for('static', filename='images/Umzug/ящики, надёжно.jpg') }}" alt="Umzugsverpackung">
+                                <img src="{{ url_for('static', filename='images/Umzug/Sichere_Boxen.jpg') }}" alt="Umzugsverpackung">
                             </div>
                             <div class="fan-photo-item" style="z-index: 1;">
-                                <img src="{{ url_for('static', filename='images/Umzug/транспортировка большого груза.jpg') }}" alt="Großtransport">
+                                <img src="{{ url_for('static', filename='images/Umzug/Grossfrachttransport.jpg') }}" alt="Großtransport">
                             </div>
                         </div>
                     </div>
@@ -599,10 +592,10 @@
                             </ul>
                         </div>
                         <div class="truck-image-wrapper">
-                            <img src="{{ url_for('static', filename='images/чистота машины и вспомогательные девайсы.png') }}" alt="Sauberkeit und Ausrüstung" class="truck-image">
+                            <img src="{{ url_for('static', filename='images/Sauberes_Fahrzeug_und_Zubehoer.png') }}" alt="Sauberkeit und Ausrüstung" class="truck-image">
                         </div>
                         <div class="truck-image-wrapper">
-                            <img src="{{ url_for('static', filename='images/машина1.jpg') }}" alt="Unser Fahrzeug" class="truck-image">
+                            <img src="{{ url_for('static', filename='images/Fahrzeug1.jpg') }}" alt="Unser Fahrzeug" class="truck-image">
                         </div>
                         <div class="feature-item" style="margin-left: 30px; width: 30%; background-color: rgba(255, 255, 255, 0.5); padding: 15px; border-radius: 10px;">
                             <h4 style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Flexibler Einsatz</h4>
@@ -814,7 +807,7 @@
 
         <div class="whatsapp-chat-bubble" id="chatBubble">
             <div class="whatsapp-chat-header">
-                <img src="{{ url_for('static', filename='images/машина2.png') }}" onerror="this.src='https://via.placeholder.com/40x40/128C7E/FFFFFF?text=DT'" alt="Daniely Transporte">
+                <img src="{{ url_for('static', filename='images/Fahrzeug2.png') }}" onerror="this.src='https://via.placeholder.com/40x40/128C7E/FFFFFF?text=DT'" alt="Daniely Transporte">
                 <div class="whatsapp-chat-header-info">
                     <h4>Daniely Transporte</h4>
                     <p>Online</p>

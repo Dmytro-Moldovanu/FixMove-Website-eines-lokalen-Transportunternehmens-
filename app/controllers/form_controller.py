@@ -3,7 +3,6 @@
 """
 from flask import Blueprint, request, current_app, redirect, url_for, flash, render_template, jsonify
 from app.models.form_data import ContactFormData
-from app.services.form_service import FormService
 
 # Создаем Blueprint для обработки форм
 form_bp = Blueprint('form', __name__)

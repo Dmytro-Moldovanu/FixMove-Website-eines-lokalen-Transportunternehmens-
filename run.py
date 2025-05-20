@@ -1,5 +1,5 @@
 """
-Файл для запуска веб-приложения
+Datei zum Starten der Webanwendung
 """
 from app import create_app
 from app.config import DevelopmentConfig

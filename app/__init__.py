@@ -1,5 +1,5 @@
 """
-Инициализация Flask приложения
+Initialisierung der Flask-Anwendung
 """
 from flask import Flask
 from app.config import Config
@@ -7,17 +7,17 @@ import os
 
 def create_app(config_class=Config):
     """
-    Фабричный метод для создания приложения Flask
+    Fabrikmethode zur Erstellung der Flask-Anwendung
     """
-    # Теперь используем внутренние папки app
+    # Wir verwenden jetzt interne app-Ordner
     app = Flask(__name__)
                 
     app.config.from_object(config_class)
     
-    # Создаем папку для загрузок, если она не существует
+    # Upload-Ordner erstellen, falls er nicht existiert
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     
-    # Регистрация маршрутов из контроллеров
+    # Registrierung von Routen aus den Controllern
     from app.controllers.main_controller import main_bp
     from app.controllers.form_controller import form_bp
     
