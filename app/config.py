@@ -1,29 +1,29 @@
 """
-Конфигурационный файл приложения
+Konfigurationsdatei der Anwendung
 """
 import os
 
 class Config:
     """
-    Базовый класс конфигурации
+    Basis-Konfigurationsklasse
     """
     SECRET_KEY = os.environ.get('SECRET_KEY', 'default-dev-key')
     UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'uploads')
-    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB максимальный размер загружаемых файлов
-    # EmailJS настройки
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB maximale Größe der hochgeladenen Dateien
+    # EmailJS Einstellungen
     EMAILJS_USER_ID = os.environ.get('EMAILJS_USER_ID', 'HDkfTM23gfmDWw3oG')
 
 
 class DevelopmentConfig(Config):
     """
-    Конфигурация для разработки
+    Entwicklungskonfiguration
     """
     DEBUG = True
 
 
 class ProductionConfig(Config):
     """
-    Конфигурация для production
+    Konfiguration für production
     """
     DEBUG = False
-    # В production среде SECRET_KEY должен быть установлен через переменные окружения 
+    # In der production-Umgebung muss SECRET_KEY über Umgebungsvariablen gesetzt werden 
