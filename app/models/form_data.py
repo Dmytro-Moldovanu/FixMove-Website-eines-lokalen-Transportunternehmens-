@@ -1,5 +1,5 @@
 """
-Модель данных формы обратной связи
+Contact form data model
 """
 from dataclasses import dataclass
 from typing import Optional
@@ -7,7 +7,7 @@ from typing import Optional
 @dataclass
 class ContactFormData:
     """
-    Класс для хранения данных формы обратной связи
+    Class for storing contact form data
     """
     name: str
     phone: str
@@ -22,10 +22,10 @@ class ContactFormData:
     
     def to_dict(self) -> dict:
         """
-        Преобразование данных формы в словарь для сохранения или отправки
+        Convert form data to dictionary for storage or sending
         
         Returns:
-            dict: Словарь с данными формы
+            dict: Dictionary with form data
         """
         return {
             'name': self.name,

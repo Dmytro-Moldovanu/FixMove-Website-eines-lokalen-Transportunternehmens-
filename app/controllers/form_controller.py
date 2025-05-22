@@ -1,25 +1,25 @@
 """
-Контроллер для обработки отправленных форм
+Controller for processing submitted forms
 """
 from flask import Blueprint, request, current_app, redirect, url_for, flash, render_template, jsonify
 from app.models.form_data import ContactFormData
 
-# Создаем Blueprint для обработки форм
+# Create Blueprint for form processing
 form_bp = Blueprint('form', __name__)
 
 @form_bp.route('/submit', methods=['POST'])
 def submit():
     """
-    Обработчик отправки формы
+    Form submission handler
     
     Returns:
-        str: Сообщение об успешной отправке
+        str: Success message
     """
     if request.method == 'POST':
-        # Получаем данные формы
+        # Get form data
         name = request.form.get('name')
         phone = request.form.get('phone')
-        email = request.form.get('email')  # Получаем email (может быть пустым)
+        email = request.form.get('email')  # Get email (can be empty)
         description = request.form.get('description')
         pickup_address = request.form.get('pickup_address')
         delivery_address = request.form.get('delivery_address')
@@ -28,7 +28,7 @@ def submit():
         loader = bool(request.form.get('loader'))
         notes = request.form.get('notes')
         
-        # Создаем объект данных формы
+        # Create form data object
         form_data = ContactFormData(
             name=name,
             phone=phone,
@@ -42,14 +42,14 @@ def submit():
             notes=notes
         )
         
-        # Логируем данные для отладки
-        print(f"Получены данные от {form_data.name} ({form_data.phone})")
+        # Log data for debugging
+        print(f"Received data from {form_data.name} ({form_data.phone})")
         if form_data.email:
-            print(f"Email для обратной связи: {form_data.email}")
-        print(f"Перевозка от {form_data.pickup_address} до {form_data.delivery_address}")
-        print(f"Дата и время: {form_data.pickup_date} {form_data.pickup_time}")
+            print(f"Contact email: {form_data.email}")
+        print(f"Transport from {form_data.pickup_address} to {form_data.delivery_address}")
+        print(f"Date and time: {form_data.pickup_date} {form_data.pickup_time}")
         
-        # Email теперь отправляется через JavaScript, поэтому здесь только сохраняем данные
-        # Здесь можно добавить сохранение данных в базу данных, если нужно
+        # Email is now sent via JavaScript, so we only save the data here
+        # Here you can add database storage if needed
         
         return "Anfrage erfolgreich verarbeitet!" 

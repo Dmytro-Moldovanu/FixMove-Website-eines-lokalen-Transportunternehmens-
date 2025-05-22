@@ -9,21 +9,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 let additionalOffset = 0;
                 
-                // Специальная корректировка для секции services
+                // Special adjustment for services section
                 if (targetId === '#services') {
                     additionalOffset = -navbarHeight;
                 }
-                // Для секции möbeltaxi
+                // For möbeltaxi section
                 else if (targetId === '#moebeltaxi') {
-                    additionalOffset = -navbarHeight - 0; // Смещение для секции möbeltaxi
+                    additionalOffset = -navbarHeight - 0;
                 }
-                // Для секции about
+                // For about section
                 else if (targetId === '#about') {
-                    additionalOffset = -navbarHeight - 0; // Уменьшаем смещение до 0px для поднятия секции выше
+                    additionalOffset = -navbarHeight - 0;
                 }
-                // Для секции contact
+                // For contact section
                 else if (targetId === '#contact') {
-                    additionalOffset = -70; // Уменьшаем смещение до -70px (было -60px)
+                    additionalOffset = -70;
                 }
                 
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + additionalOffset;
@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+
+                // Close mobile menu after clicking using Bootstrap's collapse
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
             }
         });
     });

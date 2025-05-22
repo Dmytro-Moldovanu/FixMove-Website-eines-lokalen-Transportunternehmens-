@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Daniel Transporte - Zuverlässige Transporte in ganz Deutschland</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             if (typeof emailjs === 'undefined') {
-                console.error('EmailJS не загружен');
+                console.error('EmailJS not loaded');
                 return;
             }
-            emailjs.init("HDkfTM23gfmDWw3oG");
+            try {
+                emailjs.init("HDkfTM23gfmDWw3oG");
+            } catch (error) {
+                console.error('Failed to initialize EmailJS:', error);
+            }
         })();
     </script>
     <style>
@@ -29,6 +36,22 @@
                 --container-padding: 10px;
                 --section-spacing: 40px;
                 --card-spacing: 15px;
+            }
+            
+            /* Add padding for mobile navigation */
+            #services {
+                padding-top: 110px !important;
+                margin-top: -110px !important;
+            }
+            
+            #moebeltaxi {
+                padding-top: 110px !important;
+                margin-top: -110px !important;
+            }
+            
+            #about {
+                padding-top: 110px !important;
+                margin-top: -110px !important;
             }
         }
         
@@ -65,12 +88,12 @@
             font-size: 0;
         }
         
-        /* Восстанавливаем размер шрифта внутри sektionen */
+        /* Restore font size inside sections */
         section > * {
             font-size: 16px;
         }
         
-        /* Создаем перекрытие sektionen für die Entfernung von Streifen */
+        /* Create section overlap to remove stripes */
         #services {
             position: relative;
             z-index: 2;
@@ -130,7 +153,7 @@
         
         #contact .container {
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.5); /* Увеличена прозрачность с 0.4 до 0.5 */
+            background-color: rgba(255, 255, 255, 0.5); /* Increased transparency from 0.4 to 0.5 */
             border-radius: 10px;
             padding: 30px;
             box-shadow: none;
@@ -344,7 +367,7 @@
         
         #moebeltaxi .container {
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.5); /* Transparenz von 0.4 auf 0.5 erhöht */
+            background-color: rgba(255, 255, 255, 0.5); /* Increased transparency from 0.4 to 0.5 */
             border-radius: 10px;
             padding: 30px;
             box-shadow: none;
@@ -563,7 +586,7 @@
     </button>
 
     <script>
-        // Показывать/скрывать кнопку прокрутки наверх
+        // Show/hide scroll to top button
         window.onscroll = function() {
             var scrollButton = document.getElementById("scrollToTop");
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -573,7 +596,7 @@
             }
         };
 
-        // Прокрутка наверх при клике
+        // Scroll to top on click
         document.getElementById("scrollToTop").onclick = function() {
             window.scrollTo({
                 top: 0,
@@ -948,16 +971,16 @@
                     <div class="row">
                         <div class="col-md-7 pe-4">
                             <h5>Kontakt</h5>
-                            <p>Telefon/WhatsApp: <a href="tel:+491629394390" class="text-white">+49 162 9394390</a></p>
-                            <p>Email: <a href="mailto:DanielyTransporte@yahoo.com" class="text-white">DanielyTransporte@yahoo.com</a></p>
-                            <p class="mb-1">Mittelstraße 15</p>
-                            <p class="mb-1">86153 Augsburg</p>
-                            <p class="mb-1">Bayern, Deutschland</p>
+                            <p class="mb-1">Telefon/WhatsApp: <span style="color: white;">+491629394390</span>
+                            <p>Email: <span style="color: white;">DanielyTransporte@yahoo.com</span>
+                            <p class="mb-1">Straße: <span style="color: white;">Mittelstraße 15</span>
+                            <p class="mb-1">PLZ:  <span style="color: white;">86153 Augsburg</span>
+                            <p class="mb-1">Land:  <span style="color: white;">Deutschland</span>
                         </div>
                         <div class="col-md-5">
                             <h5>Geschäftsinformationen</h5>
-                            <p class="mb-1">Inhaber: Gornostali Vitalie</p>
-                            <p class="mb-1">Steuernummer: 103/221/71620</p>
+                            <p class="mb-1">Inhaber: <span style="color: white;">Gornostali Vitalie</span>
+                            <p class="mb-1">Steuernummer: <span style="color: white;">103/221/71620</span>
                         </div>
                     </div>
                 </div>
@@ -969,6 +992,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-button" id="toggleChat">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </div>
+
+        <div class="whatsapp-chat-bubble" id="chatBubble">
+            <div class="whatsapp-chat-header">
+                <img src="{{ url_for('static', filename='images/Fahrzeug2.png') }}" onerror="this.src='https://via.placeholder.com/40x40/128C7E/FFFFFF?text=DT'" alt="Daniely Transporte">
+                <div class="whatsapp-chat-header-info">
+                    <h4>Daniely Transporte</h4>
+                    <p>Online</p>
+                </div>
+            </div>
+            <div class="whatsapp-chat-body">
+                <div class="whatsapp-message received">
+                    <div>Hallo! Wie kann ich dir mit deinem Transport helfen?</div>
+                    <div class="whatsapp-message-time">10:42</div>
+                </div>
+            </div>
+            <div class="whatsapp-chat-footer">
+                <a href="https://wa.me/491629394390" target="_blank" style="display:inline-block;">Bei WhatsApp fortsetzen</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Datenschutzerklärung -->
     <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
@@ -1047,100 +1096,35 @@ Letzte Aktualisierung: 21.05.2025
       </div>
     </div>
 
-    <!-- WhatsApp Widget -->
-    <div class="whatsapp-widget">
-        <div class="whatsapp-button" id="toggleChat">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </div>
-
-        <div class="whatsapp-chat-bubble" id="chatBubble">
-            <div class="whatsapp-chat-header">
-                <img src="{{ url_for('static', filename='images/Fahrzeug2.png') }}" onerror="this.src='https://via.placeholder.com/40x40/128C7E/FFFFFF?text=DT'" alt="Daniely Transporte">
-                <div class="whatsapp-chat-header-info">
-                    <h4>Daniely Transporte</h4>
-                    <p>Online</p>
-                </div>
-            </div>
-            <div class="whatsapp-chat-body">
-                <div class="whatsapp-message received">
-                    <div>Hallo! Wie kann ich dir mit deinem Transport helfen?</div>
-                    <div class="whatsapp-message-time">10:42</div>
-                </div>
-            </div>
-            <div class="whatsapp-chat-footer">
-                <a href="https://wa.me/491629394390" target="_blank" style="display:inline-block;">Bei WhatsApp fortsetzen</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
-    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
+    <!-- Cookie Consent by TermsFeed with error handling -->
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8" onerror="console.error('Failed to load TermsFeed')"></script>
     <script type="text/javascript" charset="UTF-8">
     document.addEventListener('DOMContentLoaded', function () {
-    cookieconsent.run({
-      "notice_banner_type": "interstitial",
-      "consent_type": "express",
-      "palette": "custom",
-      "language": "de",
-      "page_load_consent_levels": ["strictly-necessary"],
-      "notice_banner_reject_button_hide": false,
-      "preferences_center_close_button_hide": false,
-      "page_refresh_confirmation_buttons": false,
-      "website_name": "Daniely Transporte",
-      "colors": {
-        "popup": { "background": "#e3f2fd", "text": "#0d6efd" },
-        "button": { "background": "#0d6efd", "text": "#fff", "border": "#0d6efd" }
-      }
-    });
+        if (typeof cookieconsent === 'undefined') {
+            console.error('TermsFeed not loaded');
+            return;
+        }
+        try {
+            cookieconsent.run({
+                "notice_banner_type": "interstitial",
+                "consent_type": "express",
+                "palette": "custom",
+                "language": "de",
+                "page_load_consent_levels": ["strictly-necessary"],
+                "notice_banner_reject_button_hide": false,
+                "preferences_center_close_button_hide": false,
+                "page_refresh_confirmation_buttons": false,
+                "website_name": "Daniely Transporte",
+                "colors": {
+                    "popup": { "background": "#e3f2fd", "text": "#0d6efd" },
+                    "button": { "background": "#0d6efd", "text": "#fff", "border": "#0d6efd" }
+                }
+            });
+        } catch (error) {
+            console.error('Failed to initialize TermsFeed:', error);
+        }
     });
     </script>
-    <style>
-    /* Кастомные стили для TermsFeed Cookie Consent */
-    .cc-window.cc-interstitial {
-      border-radius: 18px !important;
-      box-shadow: 0 8px 32px rgba(13,110,253,0.18) !important;
-      background: #e3f2fd !important;
-      color: #0d6efd !important;
-      max-width: 420px !important;
-      left: 50% !important;
-      top: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      font-size: 1.1rem !important;
-      padding: 32px 28px 24px 28px !important;
-    }
-    .cc-btn {
-      background: #0d6efd !important;
-      color: #fff !important;
-      border-radius: 25px !important;
-      font-weight: 500 !important;
-      padding: 10px 32px !important;
-      border: none !important;
-      box-shadow: 0 2px 8px rgba(13,110,253,0.08) !important;
-      margin: 0 8px !important;
-      transition: background 0.2s;
-    }
-    .cc-btn:hover {
-      background: #1565c0 !important;
-      color: #fff !important;
-    }
-    .cc-message, .cc-compliance {
-      color: #0d6efd !important;
-    }
-    .cc-link {
-      color: #0d6efd !important;
-      text-decoration: underline !important;
-      font-weight: 500 !important;
-    }
-    @media (max-width: 600px) {
-      .cc-window.cc-interstitial {
-        max-width: 95vw !important;
-        padding: 18px 6vw 18px 6vw !important;
-        font-size: 1rem !important;
-      }
-    }
-    </style>
-    <noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed Generator</a></noscript>
-    <!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
 
     <!-- Cookie Preferences Link -->
     <script>
@@ -1155,41 +1139,6 @@ Letzte Aktualisierung: 21.05.2025
           };
         }
       });
-    </script>
-
-    <!-- WhatsApp Widget Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleChat = document.getElementById('toggleChat');
-            const chatBubble = document.getElementById('chatBubble');
-            
-            if (toggleChat && chatBubble) {
-                toggleChat.addEventListener('click', function() {
-                    chatBubble.classList.toggle('visible');
-                });
-                
-                // Close chat when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!chatBubble.contains(event.target) && !toggleChat.contains(event.target)) {
-                        chatBubble.classList.remove('visible');
-                    }
-                });
-            }
-        });
-    </script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Initialize all modals -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all modals
-            var modals = document.querySelectorAll('.modal');
-            modals.forEach(function(modal) {
-                new bootstrap.Modal(modal);
-            });
-        });
     </script>
 
     <script>
@@ -1216,7 +1165,7 @@ Letzte Aktualisierung: 21.05.2025
         if (!form) {
             statusElement.className = 'alert alert-danger my-3';
             statusElement.textContent = 'Fehler: Formular nicht gefunden';
-            console.error('Форма не найдена');
+            console.error('Form not found');
             return false;
         }
 
@@ -1238,5 +1187,78 @@ Letzte Aktualisierung: 21.05.2025
         return false;
     }
     </script>
+
+    <!-- WhatsApp Widget with error handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleChat = document.getElementById('toggleChat');
+            const chatBubble = document.getElementById('chatBubble');
+            const whatsappImage = document.querySelector('.whatsapp-button img');
+            
+            // Handle WhatsApp image loading error
+            if (whatsappImage) {
+                whatsappImage.onerror = function() {
+                    this.src = "{{ url_for('static', filename='images/whatsapp-fallback.png') }}";
+                };
+            }
+            
+            if (toggleChat && chatBubble) {
+                toggleChat.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default behavior
+                    chatBubble.classList.toggle('visible');
+                });
+                
+                // Close chat when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!chatBubble.contains(event.target) && !toggleChat.contains(event.target)) {
+                        chatBubble.classList.remove('visible');
+                    }
+                });
+            }
+
+            // Prevent WhatsApp from opening when clicking phone number in footer
+            const phoneLink = document.querySelector('a[href="tel:+491629394390"]');
+            if (phoneLink) {
+                phoneLink.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent event bubbling
+                });
+            }
+
+            // Handle mobile menu closing
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Initialize all modals with error handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof bootstrap === 'undefined') {
+                console.error('Bootstrap not loaded');
+                return;
+            }
+            try {
+                // Initialize all modals
+                var modals = document.querySelectorAll('.modal');
+                modals.forEach(function(modal) {
+                    new bootstrap.Modal(modal);
+                });
+            } catch (error) {
+                console.error('Failed to initialize Bootstrap modals:', error);
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 
