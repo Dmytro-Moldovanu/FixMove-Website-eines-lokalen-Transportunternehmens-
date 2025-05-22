@@ -2,7 +2,7 @@
 Initialisierung der Flask-Anwendung
 """
 from flask import Flask
-from app.config import Config
+from app.config import Config, ProductionConfig
 import os
 
 def create_app(config_class=Config):
@@ -24,4 +24,7 @@ def create_app(config_class=Config):
     app.register_blueprint(main_bp)
     app.register_blueprint(form_bp)
     
-    return app 
+    return app
+
+# Создаем экземпляр приложения по умолчанию для Gunicorn
+app = create_app(ProductionConfig) 
