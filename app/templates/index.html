@@ -1068,29 +1068,9 @@ Letzte Aktualisierung: 21.05.2025
                 </div>
             </div>
             <div class="whatsapp-chat-footer">
-                <a href="#" id="openWhatsappConfirm" style="display:inline-block;">Bei WhatsApp fortsetzen</a>
+                <a href="https://wa.me/491629394390" target="_blank" style="display:inline-block;">Bei WhatsApp fortsetzen</a>
             </div>
         </div>
-    </div>
-
-    <!-- WhatsApp Confirm Modal -->
-    <div class="modal fade" id="whatsappConfirmModal" tabindex="-1" aria-labelledby="whatsappConfirmLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background:#e3f2fd; border-radius:16px; border:none;">
-          <div class="modal-header" style="border-bottom:none;">
-            <h5 class="modal-title w-100 text-center" id="whatsappConfirmLabel" style="color:#0d6efd; font-weight:700;">Weiterleitung zu WhatsApp</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
-          </div>
-          <div class="modal-body" style="color:#0d6efd; font-size:1.05rem;">
-            Beim Klick werden Sie zu WhatsApp weitergeleitet. Die Verarbeitung personenbezogener Daten erfolgt durch Meta. Mehr dazu in unserer 
-            <a href="#" style="color:#0d6efd; text-decoration:underline; font-weight:500;" data-bs-toggle="modal" data-bs-target="#privacyModal">Datenschutzerklärung</a>.
-          </div>
-          <div class="modal-footer" style="border-top:none; justify-content:center;">
-            <a href="https://wa.me/491629394390" target="_blank" class="btn btn-primary" style="background:#0d6efd; border:none; border-radius:25px; padding:8px 32px; font-weight:500;">Weiter zu WhatsApp</a>
-            <button type="button" class="btn btn-link" data-bs-dismiss="modal" style="color:#0d6efd; font-weight:500;">Abbrechen</button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
@@ -1210,19 +1190,6 @@ Letzte Aktualisierung: 21.05.2025
                 new bootstrap.Modal(modal);
             });
         });
-    </script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var openWhatsappConfirm = document.getElementById('openWhatsappConfirm');
-        if (openWhatsappConfirm) {
-          openWhatsappConfirm.onclick = function(e) {
-            e.preventDefault();
-            var modal = new bootstrap.Modal(document.getElementById('whatsappConfirmModal'));
-            modal.show();
-          };
-        }
-      });
     </script>
 
     <script>
