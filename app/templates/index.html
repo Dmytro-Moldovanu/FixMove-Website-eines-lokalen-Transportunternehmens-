@@ -1213,11 +1213,10 @@ Letzte Aktualisierung: 21.05.2024
             return false;
         }
 
-        // Демонстрационный режим - форма не отправляет email
+
         statusElement.className = 'alert alert-info my-3';
         statusElement.textContent = 'Dies ist eine Demo-Website. Das Formular sendet keine E-Mails.';
         
-        // Очистка формы после небольшой задержки для демонстрации
         setTimeout(function() {
             form.reset();
             statusElement.className = 'alert alert-success my-3';
